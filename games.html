@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Игры о Беларус</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/games.css">
+</head>
+<body>
+    <header>
+        <div class="logo">БЕЛАРУС</div>
+        <nav>
+            <a href="index.html">Главная</a>
+            <a href="models.html">Модели</a>
+            <a href="history.html">История</a>
+            <a href="games.html">Игры</a>
+            <a href="selector.html">Подбор трактора</a>
+        </nav>
+    </header>
+
+    <main>
+        <h1>Игровая зона</h1>
+        <p class="lead">Выбирай игру и играй прямо в браузере</p>
+
+        <div class="game-tabs">
+            <button class="game-tab active" data-tab="tap">Трактор-тапалка</button>
+            <button class="game-tab" data-tab="bugs">Жуки на поле</button>
+            <button class="game-tab" data-tab="puzzle">Пазл «Пятнашки»</button>
+        </div>
+
+        <div class="game-panel active" id="panel-tap">
+            <div class="game-start" id="tapStart">
+                <h2>Трактор-тапалка</h2>
+                <p>Кликай по трактору в центре как можно больше. Никакого таймера — играй, пока не надоест. Побей свой рекорд!</p>
+                <div class="record-badge hidden" id="tapRecordBadge">
+                    Рекорд: <span id="tapRecordVal">0</span>
+                </div>
+                <button class="btn-primary" id="tapStartBtn">Начать игру</button>
+            </div>
+
+            <div class="game-area hidden" id="tapArea">
+                <div class="game-hud">
+                    <div class="hud-cell">Тапов: <span class="hud-score" id="tapScore">0</span></div>
+                    <button class="btn-ghost" id="tapReset">Сбросить</button>
+                    <div class="hud-cell">Рекорд: <span class="hud-score" id="tapRecord">0</span></div>
+                </div>
+
+                <div class="game-field tap-field" id="tapField">
+                    <div class="ring"></div>
+                    <div class="tap-target" id="tapTarget">🚜</div>
+                    <div class="hint">КЛИКАЙ ПО ТРАКТОРУ</div>
+                    <div class="toast" id="tapToast">Новый рекорд!</div>
+                </div>
+
+                <button class="btn-ghost" id="tapBack">Вернуться к началу</button>
+            </div>
+        </div>
+
+        <div class="game-panel" id="panel-bugs">
+            <div class="game-start" id="bugsStart">
+                <h2>Жуки на поле</h2>
+                <p>Жуки вылезают из земли <b>в хаотичном порядке</b> — где хотят и когда хотят. Успей кликнуть по каждому, пока он не спрятался! У тебя 30 секунд.</p>
+                <button class="btn-primary" id="bugsStartBtn">Начать игру</button>
+            </div>
+
+            <div class="game-area hidden" id="bugsArea">
+                <div class="game-hud">
+                    <div class="hud-cell">Очки: <span class="hud-score" id="bugsScore">0</span></div>
+                    <div class="hud-cell">Время: <span class="hud-score" id="bugsTime">30</span> с</div>
+                </div>
+
+                <div class="game-field bug-field" id="bugsField">
+                    <div class="game-over" id="bugsOver">
+                        <h2>Игра окончена</h2>
+                        <div class="final-score">Твой счёт: <b id="bugsFinalScore">0</b></div>
+                        <div class="verdict" id="bugsVerdict"></div>
+                        <button class="btn-primary" id="bugsAgain">Ещё раз</button>
+                    </div>
+                </div>
+
+                <button class="btn-ghost" id="bugsBack">Вернуться к началу</button>
+            </div>
+        </div>
+
+        <div class="game-panel" id="panel-puzzle">
+            <div class="game-start" id="puzzleStart">
+                <h2>Пазл «Пятнашки»</h2>
+                <p>Перемещай плитки, кликая по ним рядом с пустой клеткой. Собери все числа по порядку: от <b>1</b> до <b>8</b>, чтобы пустая клетка оказалась в правом нижнем углу.</p>
+                <button class="btn-primary" id="puzzleStartBtn">Начать игру</button>
+            </div>
+
+            <div class="game-area hidden" id="puzzleArea">
+                <div class="game-hud">
+                    <div class="hud-cell">Ходов: <span class="hud-score" id="puzzleMoves">0</span></div>
+                    <button class="btn-ghost" id="puzzleShuffle">Перемешать</button>
+                    <div class="hud-cell">Время: <span class="hud-score" id="puzzleTime">00:00</span></div>
+                </div>
+
+                <div class="puzzle-wrap">
+                    <div class="puzzle-grid" id="puzzleGrid"></div>
+
+                    <div class="game-over" id="puzzleWin">
+                        <h2>Пазл собран!</h2>
+                        <div class="final-score">Ходов: <b id="puzzleFinalMoves">0</b></div>
+                        <div class="verdict" id="puzzleFinalTime"></div>
+                        <button class="btn-primary" id="puzzleAgain">Ещё раз</button>
+                    </div>
+                </div>
+
+                <button class="btn-ghost" id="puzzleBack">Вернуться к началу</button>
+            </div>
+        </div>
+    </main>
+
+    <footer><p>© 2026 Сайт о тракторах Беларус</p></footer>
+
+    <script src="js/main.js"></script>
+    <script src="js/games.js"></script>
+</body>
+</html>

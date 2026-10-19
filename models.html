@@ -1,0 +1,186 @@
+
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Каталог техники BELARUS</title>
+
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/models-extra.css">
+</head>
+
+<body>
+
+<header>
+    <div class="logo">БЕЛАРУС</div>
+
+    <nav>
+        <a href="index.html">Главная</a>
+        <a href="models.html" class="active">Модели</a>
+        <a href="history.html">История</a>
+        <a href="games.html">Игры</a>
+        <a href="selector.html">Подбор трактора</a>
+    </nav>
+</header>
+
+<main class="catalog">
+
+    <!-- ПЕРВЫЙ ЭКРАН -->
+
+    <section class="catalog-hero">
+        <div class="catalog-hero-content">
+            <span class="catalog-eyebrow">ТЕХНИКА BELARUS</span>
+
+            <h1>
+                Машины с<br>
+                <span>характером.</span>
+            </h1>
+
+            <p>
+                От компактных помощников до мощных
+                сельскохозяйственных машин.
+                Исследуйте модели, находите подходящую технику
+                и сравнивайте характеристики.
+            </p>
+
+            <a href="#catalog-list" class="catalog-hero-btn">
+                Исследовать каталог ↓
+            </a>
+        </div>
+
+        <div class="catalog-hero-decoration" aria-hidden="true">
+            <span>09</span>
+            <small>МОДЕЛЕЙ В КАТАЛОГЕ</small>
+        </div>
+    </section>
+
+    <!-- ФИЛЬТРЫ -->
+
+    <section class="catalog-section" id="catalog-list">
+
+        <div class="catalog-heading">
+            <div>
+                <span class="catalog-eyebrow">КАТАЛОГ ТЕХНИКИ</span>
+                <h2>Найдите свою модель</h2>
+            </div>
+
+            <span id="modelCounter" class="catalog-counter">
+                Найдено: 9
+            </span>
+        </div>
+
+        <div class="catalog-controls">
+
+            <label class="catalog-search">
+                <span>Поиск модели</span>
+                <input
+                    type="search"
+                    id="modelSearch"
+                    placeholder="Например, МТЗ-82..."
+                    autocomplete="off"
+                >
+            </label>
+
+            <label class="catalog-select">
+                <span>Назначение</span>
+
+                <select id="modelFilter">
+                    <option value="all">Все модели</option>
+                    <option value="compact">Компактные</option>
+                    <option value="universal">Универсальные</option>
+                    <option value="powerful">Мощные</option>
+                </select>
+            </label>
+
+            <label class="catalog-select">
+                <span>Сортировка</span>
+
+                <select id="modelSort">
+                    <option value="default">По умолчанию</option>
+                    <option value="asc">Мощность: по возрастанию</option>
+                    <option value="desc">Мощность: по убыванию</option>
+                    <option value="name">По названию</option>
+                </select>
+            </label>
+
+        </div>
+
+        <!-- КАРТОЧКИ СОЗДАЮТСЯ ЧЕРЕЗ JS -->
+
+        <div class="catalog-grid" id="modelsGrid"></div>
+
+        <div class="catalog-empty" id="emptyMessage" hidden>
+            <span>⌕</span>
+            <h3>Ничего не найдено</h3>
+            <p>Попробуйте изменить поисковый запрос или фильтр.</p>
+            <button id="resetFilters" type="button">
+                Сбросить фильтры
+            </button>
+        </div>
+
+    </section>
+
+    <!-- СРАВНЕНИЕ -->
+
+    <section class="compare-section" id="comparison">
+
+        <div class="catalog-heading">
+            <div>
+                <span class="catalog-eyebrow">ИНТЕРАКТИВНЫЙ ИНСТРУМЕНТ</span>
+                <h2>Сравнение моделей</h2>
+                <p>
+                    Выберите две модели в каталоге, чтобы увидеть
+                    их основные различия.
+                </p>
+            </div>
+        </div>
+
+        <div class="compare-placeholder" id="comparePlaceholder">
+            <div class="compare-placeholder-icon">⇄</div>
+            <h3>Какие тракторы сравним?</h3>
+            <p>Нажмите «Сравнить» на карточках двух моделей.</p>
+            <span id="selectedCount">Выбрано: 0 из 2</span>
+        </div>
+
+        <div id="compareResult" class="compare-result" hidden></div>
+
+        <button class="compare-reset" id="clearComparison"
+                type="button" hidden>
+            Очистить сравнение ↻
+        </button>
+
+    </section>
+
+    <!-- ПЕРЕХОД К ПОДБОРУ -->
+
+    <section class="catalog-bottom">
+
+        <span class="catalog-eyebrow">НЕ ЗНАЕТЕ, ЧТО ВЫБРАТЬ?</span>
+
+        <h2>У каждой задачи — своя машина.</h2>
+
+        <p>
+            Воспользуйтесь интерактивным помощником:
+            ответьте на несколько вопросов и получите
+            рекомендацию по выбору техники.
+        </p>
+
+        <a href="selector.html" class="catalog-hero-btn">
+            Подобрать трактор →
+        </a>
+
+    </section>
+
+</main>
+
+<footer>
+    <p>© 2026 Сайт о тракторах BELARUS</p>
+</footer>
+
+<script src="js/main.js"></script>
+<script src="js/models.js" defer></script>
+
+</body>
+</html>
